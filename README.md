@@ -13,3 +13,4 @@
 Khó khăn:
 - Không nhớ thao tác commit
 - Không hiểu được bài 5 và 7 -> 10
+- Chưa học được string, mảng string
