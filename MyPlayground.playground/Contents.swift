@@ -16,24 +16,24 @@ if let minNumber = Numbers.min() {
 }
 
 //3.đảo ngược mảng
-var numbers = [1, 2, 3, 4, 5]
-numbers.reverse()
-print(numbers)
+var aNumbers = [1, 2, 3, 4, 5]
+aNumbers.reverse()
+print(aNumbers)
 
 //4.tính tổng các phần tử trong mảng
-let numbers = [1, 2, 3, 4, 5]
-let sum = numbers.reduce(0, +)
+let numbers1 = [1, 2, 3, 4, 5]
+let sum = numbers1.reduce(0, +)
 print(sum)
 
 //5loại bỏ phần tử trùng lặp khỏi mảng
-let numbers = [1, 2, 3, 3, 4, 5]
+let numbers2 = [1, 2, 3, 3, 4, 5]
 var seen: Set<Int> = []
-let uniqueNumbers = numbers.filter { seen.insert($0).inserted }
+let uniqueNumbers = numbers2.filter { seen.insert($0).inserted }
 print(uniqueNumbers)
 
 //6kiểm tra một phần tử có tồn tại trong mảng không
-let numbers = [1, 2, 3, 4, 5]
-if numbers.contains(4) {
+let numbers3 = [1, 2, 3, 4, 5]
+if numbers3.contains(4) {
     print("co ton tai")
 } else {
     print("khong ton tai")
@@ -41,24 +41,24 @@ if numbers.contains(4) {
 
 //7 sắp xếp mảng theo thứ tự
 //tăng
-var numbers = [5, 2, 9, 1, 7]
-let ascending = numbers.sorted()
+var numbers4 = [5, 2, 9, 1, 7]
+let ascending = numbers4.sorted()
 print(ascending)
 //giảm
-let numbers = [5, 2, 9, 1, 7]
-let descending = numbers.sorted(by: >)
+let numbers5 = [5, 2, 9, 1, 7]
+let descending = numbers5.sorted(by: >)
 print(descending)
  
 // 8 tìm tất cả chỉ số của một phần tử cụ thể
-let numbers = [1, 2, 2, 4, 5, 2, 6]
+let numbers6 = [1, 2, 2, 4, 5, 2, 6]
 let target = 2
 
-let indexes = numbers.enumerated().compactMap { (index, value) in value == target ? index : nil
+let indexes = numbers6.enumerated().compactMap { (index, value) in value == target ? index : nil
 }
 print(indexes)
  
 // 9 tìm phần tử lăp lại nhiều nhất
-let numbers = [1, 3, 2, 3, 4, 3, 2, 1, 3]
+let numbers7 = [1, 3, 2, 3, 4, 3, 2, 1, 3]
 
 // 1. Đếm số lần xuất hiện của từng phần tử
 var frequency: [Int: Int] = [:]
