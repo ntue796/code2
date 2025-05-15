@@ -61,3 +61,20 @@ if name == "anh"{
 } else {
     print("I am sorry, but i don't recognize you")
 }
+
+
+let isBuilDebug = true
+
+if !isBuilDebug != true {
+    print("Build is not debug build")
+}
+
+let haveTicket = true
+let isAdult = true
+let isVIP = true
+
+if haveTicket && isAdult || isVIP {
+    print("Can get in the helicoper")
+} else {
+    print("You can not in the helicoper")
+}
