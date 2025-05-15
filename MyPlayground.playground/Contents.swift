@@ -8,10 +8,10 @@ for number in numbers {
 
 //2.Tìm phần tử lớn nhất/nhỏ nhất trong mảng.
 let Numbers = [1, 5, 10, 17, 9]
-if let maxNumber = numbers.max() {
+if let maxNumber = Numbers.max() {
     print("phan tu lon nhat la: \(maxNumber)")
 }
-if let minNumber = numbers.min() {
+if let minNumber = Numbers.min() {
     print("phan tu nho nhat la: \(minNumber)")
 }
 
@@ -33,7 +33,7 @@ print(uniqueNumbers)
 
 //6kiểm tra một phần tử có tồn tại trong mảng không
 let numbers = [1, 2, 3, 4, 5]
-if numbers.contains(3) {
+if numbers.contains(4) {
     print("co ton tai")
 } else {
     print("khong ton tai")
