@@ -1,16 +1,16 @@
-#15/5/25
-##Đã học:
-* Swift:
-- Kiểu dữ liệu cơ bản và tập hợp
-- Khai báo hằng và biến
-- 10 bài toán về mảng
-* C
-- Thuật toán
-- Các bước giải 1 thuật toán
-* Git, github, sourcetree
-- Cách xoá một file
-- Cách commit các file lên github
-##Khó khăn:
-- Không nhớ thao tác commit
-- Không hiểu được bài 5 và 7 -> 10
-- Chưa học được string, mảng string
+# 15/5/25
+## Đã học:
+### Swift:
+- [x]Kiểu dữ liệu cơ bản và tập hợp
+- [x]Khai báo hằng và biến
+- [x]10 bài toán về mảng
+### Ngôn ngữ C
+- [x]Thuật toán
+- [x]Các bước giải 1 thuật toán
+#### Git, github, sourcetree
+- [x]Cách xoá một file
+- [x]Cách commit các file lên github
+##### Khó khăn:
+- [x]Không nhớ thao tác commit
+- [x]Không hiểu được bài 5 và 7 -> 10
+- [x]Chưa học được string, mảng string
