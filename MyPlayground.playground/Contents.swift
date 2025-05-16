@@ -100,9 +100,9 @@ if t.isEmpty {
 }
 //15 Kiểm tra 2 tập hợp có phần tưt chung không
 let setN: Set<Int> = [1, 2, 5, 9, 8, 7, 6]
-let setM: Set<Int> = [1, 3, 4, 7, 8, 10]
+let setM: Set<Int> = [11, 3, 4, 12, 10]
 if !setN.isDisjoint(with: setM) {
     print("Hai tập hợp có phần tử chung")
 } else {
-    print("Ha tập hợp không có phần tử chung")
+    print("Hai tập hợp không có phần tử chung")
 }
