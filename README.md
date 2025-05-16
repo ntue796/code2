@@ -1,5 +1,3 @@
-let result = tinhTong([1, 2, 3])
-print(result)
 15/5/25
 Đã học:
 - Swift:
