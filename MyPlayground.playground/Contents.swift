@@ -106,3 +106,19 @@ if !setN.isDisjoint(with: setM) {
 } else {
     print("Hai tập hợp không có phần tử chung")
 }
+//16 Đếm số phần tử duy nhất trong một mảng dùng Set.
+let p: [String] = ["tue", "tina", "cop", "tue", "tina"]
+let uniqueP = Set(p)
+print("Số phần tử duy nhất trong mảng là: \(uniqueP)")
+//17 Kiểm tra một chuỗi có chứa tất cả ký tự duy nhất không.
+func isUnique(_ x: String) -> Bool {
+    let characters = Array(x)
+    let uniqueCharacters = Set(characters)
+    return characters.count == uniqueCharacters.count
+}
+let input = "aacdefg"
+if isUnique(input) {
+    print("Chuỗi '\(input)' chứa toàn ký tự duy nhất.")
+} else {
+    print("Chuỗi '\(input)' có ký tự lặp lại.")
+}
