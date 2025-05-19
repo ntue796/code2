@@ -1,7 +1,7 @@
 //1 Khởi tạo một mảng string và in ra từng phần tử
 let a: [String] = ["tue", "tina", "cop"]
-for string in a {
-    print("\(string)")
+for name in a {
+    print("\(name)")
 }
 //2 Tìm phần tử lớn nhất/ nhỏ nhất trong mảng
 let b: [Int] = [1, 2, 3, 4, 5]
@@ -122,3 +122,67 @@ if isUnique(input) {
 } else {
     print("Chuỗi '\(input)' có ký tự lặp lại.")
 }
+//18 Tạo một tập hợp từ một chuỗi và in ra các ký tự duy nhất.
+let v: [String] = ["tue", "tina", "tue"]
+let uniqueCharacters = Set(v)
+print("Các ký tự duy nhất là: \(uniqueCharacters)")
+//19 Xóa phần tử nhỏ nhất/lớn nhất khỏi Set.
+var hi: Set<Float> = [1.2, 2.3, 3.4, 4.5, 5.6]
+if let minElement = hi.min() {
+    hi.remove(minElement)
+}
+print("Sau khi xoá phần tử nhỏ nhất:", hi)
+if let maxElement = hi.max() {
+    hi.remove(maxElement)
+}
+print("Sau khi xoá phần tử lớn nhất:", hi)
+//20 So sánh 2 Set<String> để kiểm tra tính tương đương.
+let set1: Set<Int> = [1, 2, 3, 4, 5]
+let set2: Set<Int> = [2, 3, 4, 5, 6]
+if set1 == set2 {
+    print("Hai set tương đương nhau")
+} else {
+    print("Hai set không thương đương nhau")
+}
+//21 Tạo một dictionary lưu tên và tuổi, sau đó in tất cả các cặp key-value.
+let people: [String: Int] = ["tue": 18, "tina": 1, "cop": 3]
+for (name, age) in people {
+    print("Tên: \(name), tuổi: \(age)")
+}
+//22 Tìm tuổi lớn nhất trong dictionary.
+if let (name, age) = people.max(by: {$0.value < $1.value} ) {
+    print("Người có tuổi lớn nhất là: \(name) với \(age) tuổi")
+}
+//23 Đếm số lần xuất hiện của từng chữ cái trong chuỗi.
+let text = "vothingoctue"
+var letterCounts: [Character: Int] = [:]
+for char in text {
+    letterCounts[char, default: 0] += 1
+}
+for (char, count) in letterCounts {
+    print("Ký tự \(char) xuất hiện \(count) lần")
+}
+//24 Tạo một dictionary để nhóm tên theo chữ cái đầu tiên.
+let names = ["tue", "anh", "bao", "quyen", "truong"]
+var groupedNames: [Character: [String]] = [:]
+for name in names {
+    if let firtsChar = name.first {
+        groupedNames[firtsChar, default: []].append(name)
+    }
+}
+for (key, value) in groupedNames {
+    print("\(key): \(value)")
+}
+//25 Lấy tất cả key hoặc tất cả value từ dictionary.
+let family = ["tue": 18, "tina": 1, "cop": 3]
+let keys = family.keys
+print("Keys:" ,Array(keys))
+let values = family.values
+print("Values:" , Array(values))
+//26 Đảo key và value trong dictionary
+let number1 = ["tue": 18, "tina": 1, "cop": 3]
+let reversedNumber1 = number1.reversed()
+print("Keys:", Array(keys))
+print("Values:", Array(values))
+
+
