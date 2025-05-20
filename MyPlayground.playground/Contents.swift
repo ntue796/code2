@@ -181,8 +181,23 @@ let values = family.values
 print("Values:" , Array(values))
 //26 Đảo key và value trong dictionary
 let number1 = ["tue": 18, "tina": 1, "cop": 3]
-let reversedNumber1 = number1.reversed()
-print("Keys:", Array(keys))
-print("Values:", Array(values))
-
-
+let reversed = Dictionary(uniqueKeysWithValues: number1.map { ($1, $0) })
+print(reversed)
+//27 Cập nhật giá trị cho một key cụ thể.
+var number2 = ["tue": 18, "tina": 1, "cop": 3]
+number2["tina"] = 2
+print(number2)
+//28 Xóa key khỏi dictionary nếu thỏa điều kiện.
+var number4 = ["tue": 18, "tina": 1, "cop": 3]
+number4 = number4.filter { $0.value >= 1 }
+print(number4)
+//29 Tìm tất cả key có value lớn hơn n.
+let number5 = ["tue": 18, "tina": 1, "cop": 3, "quyen": 28]
+let n = 3
+let keysGreaterThanN = number5.filter { $0.value > n }.map { $0.key }
+print("Các key có value lớn hơn \(n):", keysGreaterThanN)
+//30 Tìm key có value lớn nhất.
+let number3 = ["tue": 18, "tina": 1, "cop": 3]
+if let maxEntry = number3.max(by: { $0.value < $1.value }) {
+    print("Người có tuổi lớn nhất là \(maxEntry.key), với tuổi \(maxEntry.value)")
+}

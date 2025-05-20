@@ -112,3 +112,23 @@
 ##### Truy cập và sửa từ điển
 ## Kế hoạch
 - Học 2 phần Strings và Characters, Collection Types trong 1 ngày
+
+# 20/5/25
+## Đã học:
+### Control Flow
+#### Vòng lặp For-in: sử dụng vòng lặp for- in để lặp qua một chuỗi, chẳng hạn như các mục trong một mảng, dãy số hoặc ký tự trong một chuỗi.
+#### Vòng lặp While: Một vòng lặp while thực hiện một tập hợp các câu lệnh cho đến khi điều kiện trở thành false. Các loại vòng lặp này được sử dụng tốt nhất khi số lần lặp không được biết trước khi lần lặp đầu tiên bắt đầu. Cung cấp 2 loại vòng lặp while.
+- while: Đánh giá tình trạng của nó khi bắt đầu mỗi lần chạy qua vòng lặp.
+- repeat-while: Đánh giá tình trạng của nó vào cuối mỗi lần chạy qua vòng lặp.
+##### While: Vòng lặp while bắt đầu bằng cách đánh giá một điều kiện duy nhất. Nếu điều kiện là true, một tập hợp các câu lệnh được lặp lại cho đến khi điều kiện trở thành false.
+##### Repeat- while: Biến thể khác của vòng lặp while, được gọi là vòng lặp repeat- while, thực hiện một lần chạy qua khối vòng lặp trước, trước khi xem xét điều kiện của vòng lặp. Sau đó, nó tiếp tục lặp lại vòng lặp cho đến khi điều kiện là false.
+#### Conditional Statemanets( Vòng lặp có điều kiện)
+##### If: Ở dạng đơn giản nhất, câu lệnh if có một điều kiện if duy nhất. Nó thực thi một tập hợp các câu lệnh chỉ khi điều kiện đó là true.
+##### Switch: Một câu lệnh switch xem xét một giá trị và so sánh nó với một số mẫu khớp có thể có. Sau đó, nó thực thi một khối mã thích hợp, dựa trên mẫu đầu tiên khớp thành công. Một câu lệnh switch cung cấp một phương án thay thế cho câu lệnh if để phản hồi nhiều trạng thái tiềm năng.
+##### Các câu lệnh chuyển giao điều kiện:
+- Continue: Bỏ qua phần còn lại của vòng lặp hiện tại, chuyển sang lần lặp tiếp theo
+- Break: Thoát khỏi vòng lặp hoặc thoát khỏi switch
+- Fallthrough: Trong switch, tiếp tục chạy xuống case tiếp theo dù điều kiện không đúng
+## Kế hoạch:
+- Học xong Control Flow
+- Làm 4 bài code.
