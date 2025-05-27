@@ -201,3 +201,15 @@ let number3 = ["tue": 18, "tina": 1, "cop": 3]
 if let maxEntry = number3.max(by: { $0.value < $1.value }) {
     print("Người có tuổi lớn nhất là \(maxEntry.key), với tuổi \(maxEntry.value)")
 }
+//31
+let hello: [String] = ["tue", "tina", "bao"]
+let reversedHello = hello.reversed()
+print(Array(reversedHello))
+
+
+let tue: [Int] = [1, 2, 3, 4, 5]
+let sum1 = tue.reduce (10, *)
+let sum2 = tue.reduce (0, +)
+print("tổng là: \(sum1)")
+
+let a2: [Int] = [1, 2, 3, 4, 5]
