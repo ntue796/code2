@@ -16,9 +16,15 @@ let c: [Int] = [1, 2, 3, 4, 5]
 let reversedC = c.reversed()
 print(Array(reversedC))
 //4 Tính tổng các phần tử trong mảng
-let d: [Float] = [1.2, 2.3, 3.4, 3.5, 9.9]
+//let d: [Float] = [1.2, 2.3, 3.4, 3.5, 9.9]
+//let sum = d.reduce(0, )
+//print("Tổng là: \(sum)")
+let d: [Int] = [1, 2, 3, 4, 5]
 let sum = d.reduce(0, +)
-print("Tổng là: \(sum)")
+print("\(sum)")
+
+
+
 //5 loại bỏ phần tử trùng lặp khỏi mảng
 let e: [String] = ["tue", "tue", "tina", "tina", "cop"]
 var seenE: Set<String> = []
@@ -201,15 +207,148 @@ let number3 = ["tue": 18, "tina": 1, "cop": 3]
 if let maxEntry = number3.max(by: { $0.value < $1.value }) {
     print("Người có tuổi lớn nhất là \(maxEntry.key), với tuổi \(maxEntry.value)")
 }
-//31
-let hello: [String] = ["tue", "tina", "bao"]
-let reversedHello = hello.reversed()
-print(Array(reversedHello))
+//31 Chuyển một mảng sang set để lọc trùng rồi chuyển lại về mảng.
+let a2: [String] = ["tue", "tina", "cop", "tina", "cop"]
+let uniqueArray = Array(Set(a2))
+print(uniqueArray)
+//32 Đếm số lần xuất hiện của từ trong đoạn văn (word frequency).
+import Foundation
+
+let paragraph = """
+hello, my name is ngoc tue
+"""
+
+let cleaned = paragraph
+    .lowercased()
+    .components(separatedBy: CharacterSet.alphanumerics.inverted)
+    .filter { !$0.isEmpty }
+
+var freq: [String: Int] = [:]
+
+for word in cleaned {
+    freq[word, default: 0] += 1
+}
+
+for (word, count) in freq.sorted(by: { $0.value > $1.value }) {
+    print("\(word): \(count)")
+}
+//33 Tìm từ xuất hiện nhiều nhất trong mảng chuỗi.
+let words = ["apple", "banana", "apple", "orange", "banana", "apple"]
+
+var frequency: [String: Int] = [:]
+for word in words {
+    frequency[word, default: 0] += 1
+}
+
+if let (mostFrequentWord, count) = frequency.max(by: { $0.value < $1.value }) {
+    print("Từ xuất hiện nhiều nhất là '\(mostFrequentWord)' với \(count) lần.")
+} else {
+    print("Không có từ nào.")
+}
+//34 Tạo dictionary String: [Int] để lưu thông tin nhiều giá trị cho một khóa.
+import Foundation
+
+var scoresByName: [String: [Int]] = [:]
+
+func addScore(_ score: Int, for student: String, to dict: inout [String: [Int]]) {
+    dict[student, default: []].append(score)
+}
+
+addScore(90, for: "tue", to: &scoresByName)
+addScore(85, for: "tina", to: &scoresByName)
+addScore(70, for: "cop", to: &scoresByName)
+
+for (student, scores) in scoresByName {
+    let average = scores.reduce(0, +) / scores.count
+    print(" \(student): \(scores) -> Trung bình: \(average)")
+}
+//35 Tách các phần tử chẵn/lẻ trong mảng thành 2 dictionary.
+import Foundation
+
+let numbers = [1, 2, 3, 4, 5, 6, 7]
+
+var evenNumbers: [Int: Int] = [:]  // index: value
+var oddNumbers: [Int: Int] = [:]
+
+for (index, number) in numbers.enumerated() {
+    if number % 2 == 0 {
+        evenNumbers[index] = number
+    } else {
+        oddNumbers[index] = number
+    }
+}
+
+print("Số chẵn:")
+for (index, number) in evenNumbers {
+    print("Index \(index): \(number)")
+}
+
+print("\n Số lẻ:")
+for (index, number) in oddNumbers {
+    print("Index \(index): \(number)")
+}
+//36 Dùng Set để xác định các phần tử không trùng lặp trong nhiều mảng.
+import Foundation
+
+let array1 = [1, 2, 3, 4]
+let array2 = [3, 4, 5, 6]
+let array3 = [6, 7, 8]
+
+let seta = Set(array1)
+let setb = Set(array2)
+let setc = Set(array3)
 
 
-let tue: [Int] = [1, 2, 3, 4, 5]
-let sum1 = tue.reduce (10, *)
-let sum2 = tue.reduce (0, +)
-print("tổng là: \(sum1)")
+let allElements = array1 + array2 + array3
 
-let a2: [Int] = [1, 2, 3, 4, 5]
+
+var frequency1: [Int: Int] = [:]
+for num in allElements {
+    frequency1[num, default: 0] += 1
+}
+
+let uniqueElements = frequency.filter { $0.value == 1 }.map { $0.key }
+
+print("Các phần tử không trùng lặp trong các mảng là: \(uniqueElements)")
+//37 So sánh 2 dictionary có giống nhau không
+let dict1 = ["a": 1, "b": 2, "c": 3]
+let dict2 = ["b": 2, "a": 1, "c": 3]
+
+if dict1 == dict2 {
+    print("Hai dictionary giống nhau.")
+} else {
+    print("Hai dictionary khác nhau.")
+}
+//38 Kiểm tra mảng có phải là permutation của nhau không.
+func arePermutations<T: Comparable>(_ arr1: [T], _ arr2: [T]) -> Bool {
+    return arr1.sorted() == arr2.sorted()
+}
+
+let a8 = [1, 2, 3, 4]
+let b8 = [4, 3, 2, 1]
+
+print(arePermutations(a8, b8))
+//39 Duyệt một dictionary theo thứ tự tăng dần của key.
+
+let scores = ["Charlie": 80, "Alice": 95, "Bob": 90]
+
+for key in scores.keys.sorted() {
+    if let value = scores[key] {
+        print("\(key): \(value)")
+    }
+}
+//40 Duyệt mảng và đếm số phần tử lớn hơn phần tử bên trái.
+let numbers1 = [3, 5, 2, 6, 1, 8, 4]
+
+var count = 0
+
+for i in 1..<numbers1.count {
+    if numbers1[i] > numbers1[i - 1] {
+        count += 1
+        print(" \(numbers1[i]) > \(numbers1[i - 1])")
+    } else {
+        print(" \(numbers1[i]) <= \(numbers1[i - 1])")
+    }
+}
+
+print(" Tổng số phần tử lớn hơn phần tử bên trái: \(count)")

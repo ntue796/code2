@@ -777,7 +777,6 @@ if score3 < 100 {
     print(score3)
 }
 //bạn viết nhiều hơn một khối defer trong cùng một phạm vi, khối đầu tiên bạn chỉ định sẽ là khối cuối cùng được chạy.
-
 var score4 = 3
 if score4 < 10 {
     defer {
