@@ -352,3 +352,53 @@ for i in 1..<numbers1.count {
 }
 
 print(" Tổng số phần tử lớn hơn phần tử bên trái: \(count)")
+//41 tìm cặp số trong mảng có tổng là target
+let numbers5 = [2, 7, 11, 15]
+let target1 = 9
+var seen = Set<Int>()
+
+for number in numbers5 {
+    let complement = target1 - number
+    if seen.contains(complement) {
+        print("Cặp số là: \(number) và \(complement)")
+        break
+    }
+    seen.insert(number)
+}
+//42 Tìm tất cả các chuỗi con không trùng lặp trong chuỗi.
+let start = "ab"
+var result = Set<String>()
+
+for i in 0..<input.count {
+    for j in i+1...input.count {
+        let start = input.index(input.startIndex, offsetBy: i)
+        let end = input.index(input.startIndex, offsetBy: j)
+        let substring = String(input[start..<end])
+        result.insert(substring)
+    }
+}
+
+print("Chuỗi con không trùng lặp:")
+for s in result {
+    print(s)
+}
+// 43 Gom nhóm từ là anagram
+let word: [String] = ["eat", "tea", "ate"]
+
+var anagramGroups = [String: [String]]()
+
+for word in words {
+    let sortedWord = String(word.sorted())
+    if anagramGroups[sortedWord] != nil {
+        anagramGroups[sortedWord]?.append(word)
+    } else {
+        anagramGroups[sortedWord] = [word]
+    }
+}
+
+let result1 = Array(anagramGroups.values)
+print("Các nhóm anagram:")
+for group in result {
+    print(group)
+}
+
