@@ -401,4 +401,79 @@ print("Các nhóm anagram:")
 for group in result {
     print(group)
 }
+//44 Dò tìm chuỗi con dài nhất không lặp ký tự.
+import Foundation
 
+func longestUniqueSubstring(_ s: String) -> (substring: String, length: Int) {
+    var currentSubstring = ""
+    var longestSubstring = ""
+
+    for char in s {
+        if let index = currentSubstring.firstIndex(of: char) {
+            currentSubstring.removeSubrange(...index)
+        }
+        currentSubstring.append(char)
+
+        if currentSubstring.count > longestSubstring.count {
+            longestSubstring = currentSubstring
+        }
+    }
+
+    return (longestSubstring, longestSubstring.count)
+}
+let chuoi = "abcabcbb"
+let ketqua = longestUniqueSubstring(input)
+print("Chuỗi con dài nhất không lặp ký tự là: \"\(ketqua.substring)\"")
+print("Độ dài: \(ketqua.length)")
+//45 Kiểm tra từ điển có phải là palindrome không.
+func isPalindrome(_ word: String) -> Bool {
+    let cleaned = word.lowercased().filter { $0.isLetter || $0.isNumber }
+    return cleaned == String(cleaned.reversed())
+}
+let word1 = "radar"
+print("\(word1): \(isPalindrome(word1))")
+
+let word2 = "hello"
+print("\(word2): \(isPalindrome(word2))")
+//46 Sử dụng reduce để thực hiện phép tính tích/tổng/phức tạp hơn.
+// tổng
+let so = [1, 2, 3, 4, 5]
+let tong = so.reduce(0, +)
+print("\(tong)")
+// tích
+let tich = so.reduce(1, *)
+print("\(tich)")
+// ghép chuỗi thành câu
+let chuoix: [String] = ["Đi", "du", "lịch", "Nam", "Cát", "Tiên"]
+let sentence = chuoix.reduce("", { $0 + ($0.isEmpty ? "" : " ") + $1 })
+print(sentence)
+// tính tổng các số chẵn
+let evenSum = so.reduce(0) { $1 % 2 == 0 ? $0 + $1 : $0 }
+print("Tổng số chẵn: \(evenSum)")
+// tạo dictionary từ mảng
+let ten = ["Tue", "Tina", "Cop", "ngoctue", "kimanh", "kimbao"]
+let nameDict = ten.reduce(into: [:]) { result, name in
+    result[name] = name.count
+}
+print(nameDict)
+//47 Dùng filter để lấy các phần tử thỏa điều kiện
+// lấy số chẵn từ mảng
+let so1 = [1, 2, 3, 4, 5, 6]
+let evenNumber = so1.filter { $0 % 2 == 0 }
+print(evenNumbers)
+// lấy chuỗi có độ dài lớn hơn 4
+let ten1 = ["Tue", "Tina", "Cop"]
+let longNames = ten1.filter { $0.count > 4 }
+print(longNames)
+// lấy số âm
+let so2 = [-3, 0, 5, -1, 8]
+let negativeValues = so2.filter { $0 < 0 }
+print(negativeValues)
+// lọc ký tự là nguyên âm
+let characters = Array("hello, ngoctue")
+let vowels = characters.filter { "aeiouAEIOU".contains($0) }
+print(vowels)
+// lấy phần tử chứa từ khoá
+let sentences = ["có sức khoẻ là có tất cả", " ngoctue đang học Swift"]
+let swiftSentences = sentences.filter { $0.contains("Swift") }
+print(swiftSentences)
