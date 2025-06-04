@@ -338,20 +338,16 @@ for key in scores.keys.sorted() {
     }
 }
 //40 Duyệt mảng và đếm số phần tử lớn hơn phần tử bên trái.
-let numbers1 = [3, 5, 2, 6, 1, 8, 4]
-
+let numbers2 = [3, 5, 2, 6, 1, 8, 4]
 var count = 0
 
-for i in 1..<numbers1.count {
-    if numbers1[i] > numbers1[i - 1] {
+for i in 1..<numbers.count {
+    if numbers[i] > numbers[i - 1] {
         count += 1
-        print(" \(numbers1[i]) > \(numbers1[i - 1])")
-    } else {
-        print(" \(numbers1[i]) <= \(numbers1[i - 1])")
     }
 }
 
-print(" Tổng số phần tử lớn hơn phần tử bên trái: \(count)")
+print("Số phần tử lớn hơn phần tử bên trái là: \(count)")
 //41 tìm cặp số trong mảng có tổng là target
 let numbers5 = [2, 7, 11, 15]
 let target1 = 9
@@ -477,3 +473,57 @@ print(vowels)
 let sentences = ["có sức khoẻ là có tất cả", " ngoctue đang học Swift"]
 let swiftSentences = sentences.filter { $0.contains("Swift") }
 print(swiftSentences)
+//48 Dùng map để biến đổi phần tử trong mảng
+// nhân đối các số trong mảng
+let so3 = [1, 2, 3, 4]
+let double = so3.map { $0 * 2 }
+print(double)
+// Lấy độ dài các chuỗi
+let names1 = ["Tue", "Tina", "Cop"]
+let lengths = names1.map { $0.count }
+print(lengths)
+// viết hoa toàn bộ tên
+let uppercased = names.map { $0.uppercased() }
+print(uppercased)
+// thêm hậu tố cho từng phần tử
+let tagged = names.map { "1\($0)" }
+print(tagged)
+// biến đổi kiểu dữ liệu
+let numbers1 = [1, 2, 3]
+let strings = numbers1.map { "Số \($0)" }
+print(strings)
+//49 Tạo dictionary từ hai mảng: ["a", "b", "c"] và [1, 2, 3]
+let tukhoa = ["a", "b", "c"]
+let giatri = [1, 2, 3]
+let dictionary1 = Dictionary(uniqueKeysWithValues: zip(tukhoa, giatri))
+print(dictionary1)
+//50 Tìm chuỗi con dài nhất trong mảng chuỗi có thứ tự tăng dần theo ký tự.
+func longestIncreasingSubstring(in array: [String]) -> String {
+    var maxSubstring = ""
+
+    for str in array {
+        var current = ""
+        var longestInStr = ""
+
+        for char in str {
+            if let last = current.last, char > last {
+                current.append(char)
+            } else {
+                current = String(char)
+            }
+
+            if current.count > longestInStr.count {
+                longestInStr = current
+            }
+        }
+
+        if longestInStr.count > maxSubstring.count {
+            maxSubstring = longestInStr
+        }
+    }
+
+    return maxSubstring
+}
+let strings1 = ["abc", "acdfg", "bdxz", "aefgklz", "az",]
+let result2 = longestIncreasingSubstring(in: strings1)
+print("Chuỗi con tăng dần dài nhất là: \(result2)")
